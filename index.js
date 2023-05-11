@@ -95,13 +95,15 @@ const filme = {
 	nome: "Auto da Compadecida", 
 	ano: 2000, 
 	elenco: [
-		"Matheus Nachtergaele", "Selton Mello", "Denise Fraga", 
-		"Virginia Cavendish"
+		"Matheus Nachtergaele",
+		"Selton Mello",
+		"Denise Fraga", 
+		"Virginia Cavendish",
 		], 
 	transmissoesHoje: [
 		{canal: "Telecine", horario: "21h"}, 
 		{canal: "Canal Brasil", horario: "19h"}, 
-		{canal: "Globo", horario: "14h"}
+		{canal: "Globo", horario: "14h" }
 		]
 }
 
@@ -159,7 +161,8 @@ const pessoa = {
   idade: 23, 
   backender: false
 }
-
+console.log(Object.values(pessoa))
+pessoa.nome
 console.log(minhaFuncao(pessoa, "backender"))
 console.log(minhaFuncao(pessoa, "altura"))
 
@@ -169,9 +172,80 @@ console.log(minhaFuncao(pessoa, "altura"))
 
 // ex. 1 - escrita de código
 
-// Exemplo de entrada
+// a)
+
+const usuario = {
+nome:"Uzumaki naruto",
+apelidos:["O menino da roupa de gari","O menino da raposa","O menino da profecia"
+}
+function mostraPersonagem(pessoa){
+console.log(`Eu sou ${pessoa.nome} e tenho apelidos: ${pessoa.apelidos[]}`);
+}
+mostraPersonagem(usuario)`
+	  
+
+// b) 
+
+function mostraPersonagem(pessoa) {
+	const novaPessoa = {
+	...pessoa,
+	apelidos:["Hokage","sanin lendário","personagem principal"]
+		console.log("Eu sou ${novaPessoa.nome} e tenho apelidos: ${novaPessoa.apelidos})";
+}
+
+// 2)
+
 const pessoa = {
-    nome: "Vitor Hugo", 
-    apelidos: ["Vitinho", "Vitão", "Vit"]
- }
- console.log("Eu sou Vitor, mas pode me chamar de: Vitinho, Vitão ou Vit");
+	nome:"sasuke",
+	idade: 45,
+	profissao: "Poder das sombras",
+};
+
+const pessoa1 = {
+	nome:"Rock lee",
+	idade: 40,
+	profissao: "Bater",
+};
+	
+	
+function mostrarProfissional(pessoa){
+	const nomePessoa = pessoa.nome
+	const numeroCaracterPessoaNome = pessoa.nome.length
+	const idadePessoa = pessoa.idade
+	const profissaoPessoa = pessoa.profissao
+	const numeroCaracterPessoaProfissao = pessoa.profissao.length
+	
+	return [nomePessoa,numeroCaracterPessoaNome,idadePessoa,profissaoPessoa,numeroCaracterPessoaProfissao]
+}
+
+console.log(mostrarProfissional(pessoa))
+console.log(mostrarProfissional(pessoa1))
+	
+	
+// 3) 
+	
+const carrinho = []
+
+const fruta1 = {
+nome:"tangerina",
+disponibilidade:true
+}
+
+
+const fruta2 = {
+nome:"Morango",
+disponibilidade:true
+}
+
+
+const fruta3 = {
+nome:"caju",
+disponibilidade:true
+}
+
+function adicionarFruta(fruta){
+	carrinho.push(fruta)
+}
+adicionarFruta(fruta1)
+adicionarFruta(fruta2)
+adicionarFruta(fruta3)
